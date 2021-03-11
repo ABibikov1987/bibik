@@ -82,16 +82,16 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
 
 
 object Package : BuildType({
-   name = "Package"
+   name = "build1"
 
-   artifactRules = "test.txt"
+   artifactRules = "%teamcity.build.step.name%"
 
    steps {
        script {
 
-       name = "1 creating artefact"
+       tcho "1 шаг первый "
        scriptContent = """
-       hostname >> C:\Users\admin\test.txt
+       
        """.trimident()
     formatStderrAsError
 
@@ -101,14 +101,13 @@ object Package : BuildType({
 })
 
 object Publish: BuildType({
-   name="Publish"
+   name="build2"
 
    steps {
        script {
 
-       name = "1 creating artefact"
-       scriptContent = """
-       cd C:\Users\admin\
+       echo "2 проверка результатов первого шага"
+       
        """.trimident()
     formatStderrAsError
     
@@ -116,24 +115,10 @@ object Publish: BuildType({
    }
 
    dependencies {
-       snapshot(Package){}
-       artifacts(Package) {
-           artifactRules = "test.txt"
+   artifacts(RelativeId("testtest")) {
+        buildRule = tag ("testtest")
+        artifactRules = "%teamcity.build.step.name%"
        }
    }
 })
 
-object Package : BuildType({
-   name = "Package"
-
-   steps {
-       script {
-
-       name = "1 creating artefact"
-       scriptContent = """
-       hostname >> C:\Users\admin\test3.txt
-       """.trimident()
-    formatStderrAsError
-    
-       }
-})
