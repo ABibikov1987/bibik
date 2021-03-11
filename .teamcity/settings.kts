@@ -87,7 +87,16 @@ object Package : BuildType({
    artifactRules = "test.txt"
 
    steps {
-       echo hostname >> test.txt
+       script {
+
+       name = "1 creating artefact"
+       scriptContent """
+       hostname >> C:\Users\admin\test.txt
+       """.trimident()
+    formatStderrAsError
+
+       }
+
    }
 })
 
@@ -95,8 +104,15 @@ object Publish: BuildType({
    name="Publish"
 
    steps {
-       // define the steps needed to publish the artifacts
-       notepad test.txt
+       script {
+
+       name = "1 creating artefact"
+       scriptContent """
+       cd C:\Users\admin\
+       """.trimident()
+    formatStderrAsError
+    
+       }
    }
 
    dependencies {
@@ -105,4 +121,19 @@ object Publish: BuildType({
            artifactRules = "test.txt"
        }
    }
+})
+
+object Package : BuildType({
+   name = "Package"
+
+   steps {
+       script {
+
+       name = "1 creating artefact"
+       scriptContent """
+       hostname >> C:\Users\admin\test3.txt
+       """.trimident()
+    formatStderrAsError
+    
+       }
 })
