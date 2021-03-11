@@ -83,17 +83,16 @@ object Package : BuildType({
    artifactRules = "%teamcity.build.step.name%"
 
    steps {
-       script {
+        script {
 
-       echo "1 шаг первый "
-       scriptContent = """
-       
-       """.trimident()
-    formatStderrAsError
+        name = "1 шаг первый "
+        scriptContent = """
+            echo is done
+            """.trimident()
+        formatStderrAsError
 
-       }
-
-   }
+        }
+    }
 })
 
 object Publish : BuildType({
@@ -102,10 +101,11 @@ object Publish : BuildType({
    steps {
        script {
 
-       echo "2 проверка результатов первого шага"
-       
-       """.trimident()
-    formatStderrAsError
+        name = "2 проверка результатов первого шага"
+        scriptContent = """
+            echo is done
+            """.trimident()
+        formatStderrAsError
     
        }
    }
