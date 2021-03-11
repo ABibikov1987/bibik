@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
@@ -63,6 +64,14 @@ object Bibik_Build : BuildType({
         root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
     }
 
+    steps {
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+    }
+
     triggers {
         vcs {
         }
@@ -78,62 +87,4 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         userName = "ABibikov1987"
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
-})
-
-
-object Package : BuildType({
-   name = "Package"
-
-   artifactRules = "test.txt"
-
-   steps {
-       script {
-
-       name = "1 creating artefact"
-       scriptContent = """
-       hostname >> C:\Users\admin\test.txt
-       """.trimident()
-    formatStderrAsError
-
-       }
-
-   }
-})
-
-object Publish: BuildType({
-   name="Publish"
-
-   steps {
-       script {
-
-       name = "1 creating artefact"
-       scriptContent = """
-       cd C:\Users\admin\
-       """.trimident()
-    formatStderrAsError
-    
-       }
-   }
-
-   dependencies {
-       snapshot(Package){}
-       artifacts(Package) {
-           artifactRules = "test.txt"
-       }
-   }
-})
-
-object Package : BuildType({
-   name = "Package"
-
-   steps {
-       script {
-
-       name = "1 creating artefact"
-       scriptContent = """
-       hostname >> C:\Users\admin\test3.txt
-       """.trimident()
-    formatStderrAsError
-    
-       }
 })
