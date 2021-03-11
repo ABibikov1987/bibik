@@ -85,7 +85,7 @@ object Package : BuildType({
    steps {
        script {
 
-       tcho "1 шаг первый "
+       echo "1 шаг первый "
        scriptContent = """
        
        """.trimident()
