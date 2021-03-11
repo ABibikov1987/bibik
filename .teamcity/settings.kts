@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -60,13 +59,12 @@ object Bibik_Build : BuildType({
     name = "Build"
 
     vcs {
-        root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
+        root(DslContext.settingsRoot)
     }
-
 })
 
 object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
-    name = "https://ABibikov1987@github.com/ABibikov1987/bibik#refs/heads/main"
+    name = "https://ABibikov1987@github.com/ABibikov1987/bibik"
     url = "https://ABibikov1987@github.com/ABibikov1987/bibik"
     branch = "refs/heads/main"
     branchSpec = "refs/heads/*"
@@ -75,6 +73,7 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
+<<<<<<< HEAD
 
 
 object Testtest : BuildType({
@@ -118,3 +117,5 @@ object Publish : BuildType({
 })
 
 
+=======
+>>>>>>> b12320a5923555724e17a234736ea68b6d73bea1
