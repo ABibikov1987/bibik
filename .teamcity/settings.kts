@@ -82,7 +82,6 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
-<<<<<<< HEAD
 
 
 object Package : BuildType({
