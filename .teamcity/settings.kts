@@ -78,11 +78,11 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
 
 
 object Package : BuildType({
-   name = "build1"
+    name = "build1"
 
-   artifactRules = "%teamcity.build.step.name%"
+    artifactRules = "%teamcity.build.step.name%"
 
-   steps {
+    steps {
         script {
 
         name = "1 шаг первый "
@@ -96,10 +96,10 @@ object Package : BuildType({
 })
 
 object Publish : BuildType({
-   name="build2"
+    name="build2"
 
-   steps {
-       script {
+    steps {
+        script {
 
         name = "2 проверка результатов первого шага"
         scriptContent = """
