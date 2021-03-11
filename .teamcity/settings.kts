@@ -90,7 +90,7 @@ object Package : BuildType({
        script {
 
        name = "1 creating artefact"
-       scriptContent """
+       scriptContent = """
        hostname >> C:\Users\admin\test.txt
        """.trimident()
     formatStderrAsError
@@ -107,7 +107,7 @@ object Publish: BuildType({
        script {
 
        name = "1 creating artefact"
-       scriptContent """
+       scriptContent = """
        cd C:\Users\admin\
        """.trimident()
     formatStderrAsError
@@ -130,7 +130,7 @@ object Package : BuildType({
        script {
 
        name = "1 creating artefact"
-       scriptContent """
+       scriptContent = """
        hostname >> C:\Users\admin\test3.txt
        """.trimident()
     formatStderrAsError
