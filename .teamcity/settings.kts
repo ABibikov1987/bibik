@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
@@ -63,8 +64,23 @@ object Bibik_Build : BuildType({
         root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
     }
 
+    steps {
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+    }
+
     triggers {
         vcs {
+        }
+    }
+
+    dependencies {
+        artifacts(RelativeId("Bibik_Build")) {
+            buildRule = build("%build.number%")
+            artifactRules = "%build.number%"
         }
     }
 })
@@ -79,6 +95,7 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
+<<<<<<< HEAD
 
 
 object Package : BuildType({
@@ -100,7 +117,7 @@ object Package : BuildType({
    }
 })
 
-object Publish: BuildType({
+object Publish : BuildType({
    name="build2"
 
    steps {
@@ -121,4 +138,5 @@ object Publish: BuildType({
        }
    }
 })
+
 
