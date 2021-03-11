@@ -61,6 +61,7 @@ object Bibik_Build : BuildType({
 
     vcs {
         root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
+        root(DslContext.settingsRoot)
     }
 
     steps {
