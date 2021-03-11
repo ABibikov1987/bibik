@@ -63,13 +63,6 @@ object Bibik_Build : BuildType({
         root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
     }
 
-    steps {
-        maven {
-            goals = "clean test"
-            pomLocation = ".teamcity/pom.xml"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
 })
 
 object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
