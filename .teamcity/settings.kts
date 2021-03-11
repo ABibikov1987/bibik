@@ -59,10 +59,6 @@ object Bibik : Project({
 object Bibik_Build : BuildType({
     name = "Build"
 
-    vcs {
-        root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
-    }
-
     steps {
         maven {
             goals = "clean test"
