@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
-import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -50,8 +49,6 @@ project {
 object Bibik : Project({
     name = "Bibik"
 
-    vcsRoot(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
-
     buildType(Bibik_Build)
 })
 
@@ -60,16 +57,5 @@ object Bibik_Build : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
-    }
-})
-
-object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
-    name = "https://ABibikov1987@github.com/ABibikov1987/bibik"
-    url = "https://ABibikov1987@github.com/ABibikov1987/bibik"
-    branch = "refs/heads/main"
-    branchSpec = "refs/heads/*"
-    authMethod = password {
-        userName = "ABibikov1987"
-        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
