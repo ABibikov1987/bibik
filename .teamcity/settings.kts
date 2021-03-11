@@ -79,7 +79,7 @@ object Bibik_Build : BuildType({
 
     dependencies {
         artifacts(RelativeId("Bibik_Build")) {
-            buildRule = lastSuccessful()
+            buildRule = build("%build.number%")
             artifactRules = "%build.number%"
         }
     }
