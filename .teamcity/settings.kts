@@ -79,3 +79,30 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
+
+
+object Package : BuildType({
+   name = "Package"
+
+   artifactRules = "test.txt"
+
+   steps {
+       echo hostname >> test.txt
+   }
+})
+
+object Publish: BuildType({
+   name="Publish"
+
+   steps {
+       // define the steps needed to publish the artifacts
+       notepad test.txt
+   }
+
+   dependencies {
+       snapshot(Package){}
+       artifacts(Package) {
+           artifactRules = "test.txt"
+       }
+   }
+})
