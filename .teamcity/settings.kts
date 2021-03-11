@@ -57,6 +57,10 @@ object Bibik : Project({
 
 object Bibik_Build : BuildType({
     name = "Build"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
 
 object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
