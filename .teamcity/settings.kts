@@ -84,7 +84,6 @@ object Package : BuildType({
 
     steps {
         script {
-
         name = "1 шаг первый "
         scriptContent = """
             echo is done
