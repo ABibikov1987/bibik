@@ -76,13 +76,6 @@ object Bibik_Build : BuildType({
         vcs {
         }
     }
-
-    dependencies {
-        artifacts(RelativeId("Bibik_Build")) {
-            buildRule = build("%build.number%")
-            artifactRules = "%build.number%"
-        }
-    }
 })
 
 object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
