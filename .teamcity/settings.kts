@@ -77,8 +77,8 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
 })
 
 
-object Package : BuildType({
-    name = "build1"
+object Testtest : BuildType({
+    name = "testtest"
 
     artifactRules = "%teamcity.build.step.name%"
 
@@ -110,7 +110,7 @@ object Publish : BuildType({
    }
 
    dependencies {
-   artifacts(RelativeId("testtest")) {
+   artifacts(RelativeId("Testtest")) {
         buildRule = tag ("testtest")
         artifactRules = "%teamcity.build.step.name%"
        }
