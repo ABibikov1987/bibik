@@ -63,10 +63,17 @@ object Bibik_Build : BuildType({
         root(Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain)
     }
 
+    steps {
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+    }
 })
 
 object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
-    name = "https://ABibikov1987@github.com/ABibikov1987/bibik#refs/heads/main"
+    name = "https://ABibikov1987@github.com/ABibikov1987/bibik"
     url = "https://ABibikov1987@github.com/ABibikov1987/bibik"
     branch = "refs/heads/main"
     branchSpec = "refs/heads/*"
@@ -75,46 +82,3 @@ object Bibik_HttpsABibikov1987githubComABibikov1987bibikRefsHeadsMain : GitVcsRo
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
-
-
-object Package : BuildType({
-    name = "build1"
-
-    artifactRules = "%teamcity.build.step.name%"
-
-    steps {
-        script {
-        name = "1 шаг первый "
-        scriptContent = """
-            echo is done
-            """.trimident()
-        formatStderrAsError
-
-        }
-    }
-})
-
-object Publish : BuildType({
-    name="build2"
-
-    steps {
-        script {
-
-        name = "2 проверка результатов первого шага"
-        scriptContent = """
-            echo is done
-            """.trimident()
-        formatStderrAsError
-    
-       }
-   }
-
-   dependencies {
-   artifacts(RelativeId("testtest")) {
-        buildRule = tag ("testtest")
-        artifactRules = "%teamcity.build.step.name%"
-       }
-   }
-})
-
-
