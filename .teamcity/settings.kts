@@ -1,51 +1,93 @@
-package Test.buildTypes
-
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
+import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
+/*
+The settings script is an entry point for defining a TeamCity
+project hierarchy. The script should contain a single call to the
+project() function with a Project instance or an init function as
+an argument.
 
-object Test_Test : BuildType({
-    name = "test"
+VcsRoots, BuildTypes, Templates, and subprojects can be
+registered inside the project using the vcsRoot(), buildType(),
+template(), and subProject() methods respectively.
 
-    steps {
-        script {
-            name = "step1"
-            scriptContent = "echo step1"
+To debug settings scripts in command-line, run the
+
+    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
+
+command and attach your debugger to the port 8000.
+
+To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
+-> Tool Windows -> Maven Projects), find the generate task node
+(Plugins -> teamcity-configs -> teamcity-configs:generate), the
+'Debug' option is available in the context menu for the task.
+*/
+
+version = "2020.2"
+
+project {
+    description = "Contains all other projects"
+
+    features {
+        buildReportTab {
+            id = "PROJECT_EXT_1"
+            title = "Code Coverage"
+            startPage = "coverage.zip!index.html"
         }
-        script {
-            name = "step2"
-            scriptContent = "echo step2"
+    }
+
+    cleanup {
+        baseRule {
+            preventDependencyCleanup = false
+        }
+    }
+
+    subProject(Bibik)
+}
+
+
+object Bibik : Project({
+    name = "Bibik"
+
+    vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
+    vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
+
+    buildType(Bibik_Build)
+})
+
+object Bibik_Build : BuildType({
+    name = "Build"
+
+    vcs {
+        root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
+    }
+
+    triggers {
+        vcs {
         }
     }
 })
 
-
-object Test_Test2 : BuildType({
-    name = "test2"
-    description = "bild2"
-
-    steps {
-        script {
-            name = "step1"
-            scriptContent = "echo step3"
-        }
-        script {
-            name = "step4"
-            scriptContent = "echo step4"
-        }
+object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/ABibikov1987/bibik#refs/heads/main"
+    url = "https://github.com/ABibikov1987/bibik"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "ABibikov1987"
+        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
+})
 
-    triggers {
-        finishBuildTrigger {
-            buildType = "${Test_Test.id}"
-            successfulOnly = true
-        }
-    }
-
-    dependencies {
-        snapshot(Test_Test) {
-            onDependencyFailure = FailureAction.FAIL_TO_START
-        }
+object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
+    name = "https://github.com/ABibikov1987/bibik#refs/heads/main (1)"
+    url = "https://github.com/ABibikov1987/bibik"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "ABibikov1987"
+        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
