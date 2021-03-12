@@ -65,5 +65,9 @@ object Bibik_Build : BuildType({
             name = "test step"
             scriptContent = "echo its worck"
         }
+        script {
+            name = "step2"
+            scriptContent = "echo step2"
+        }
     }
 })
