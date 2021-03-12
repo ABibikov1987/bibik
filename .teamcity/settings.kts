@@ -2,7 +2,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
-import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -46,25 +45,7 @@ project {
     }
 
     subProject(Test)
-    subProject(Finish)
 }
-
-
-object Finish : Project({
-    name = "finish"
-
-    vcsRoot(Finish_HttpsGithubComABibikov1987bibik)
-})
-
-object Finish_HttpsGithubComABibikov1987bibik : GitVcsRoot({
-    name = "https://github.com/ABibikov1987/bibik"
-    url = "https://github.com/ABibikov1987/bibik"
-    branch = "refs/heads/main"
-    authMethod = password {
-        userName = "ABibikov1987"
-        password = "credentialsJSON:70a0a77a-a09c-4fdc-a35d-e20996cb7174"
-    }
-})
 
 
 object Test : Project({
