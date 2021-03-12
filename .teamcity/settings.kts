@@ -77,4 +77,10 @@ object Bibik_Build : BuildType({
 object Test : Project({
     name = "Test"
     description = "тестовый проект"
+
+    buildType(Test_Test)
+})
+
+object Test_Test : BuildType({
+    name = "test"
 })
