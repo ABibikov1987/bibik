@@ -130,8 +130,7 @@ object Test_Test2 : BuildType({
 
     dependencies {
         snapshot(Test_Test) {
-            onDependencyFailure = FailureAction.IGNORE
-            onDependencyCancel = FailureAction.IGNORE
+            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 })
