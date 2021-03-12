@@ -102,10 +102,6 @@ object Test_Test2 : BuildType({
     name = "test2"
     description = "bild2"
 
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
     steps {
         script {
             name = "step1"
