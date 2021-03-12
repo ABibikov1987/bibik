@@ -1,92 +1,79 @@
-package Test.buildTypes
-
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
-
-import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 
+/*
+The settings script is an entry point for defining a TeamCity
+project hierarchy. The script should contain a single call to the
+project() function with a Project instance or an init function as
+an argument.
+
+VcsRoots, BuildTypes, Templates, and subprojects can be
+registered inside the project using the vcsRoot(), buildType(),
+template(), and subProject() methods respectively.
+
+To debug settings scripts in command-line, run the
+
+    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
+
+command and attach your debugger to the port 8000.
+
+To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
+-> Tool Windows -> Maven Projects), find the generate task node
+(Plugins -> teamcity-configs -> teamcity-configs:generate), the
+'Debug' option is available in the context menu for the task.
+*/
 
 version = "2020.2"
+
 project {
-    
-    buildType(Test_Test)
-    buildType(Test_Test2)
+    description = "Contains all other projects"
 
+    features {
+        buildReportTab {
+            id = "PROJECT_EXT_1"
+            title = "Code Coverage"
+            startPage = "coverage.zip!index.html"
         }
-
     }
 
-    subProject(Test)
-    subProject(Finish)
+    cleanup {
+        baseRule {
+            preventDependencyCleanup = false
+        }
+    }
+
     subProject(Bibik)
 }
 
 
-object Test_Test : BuildType({
-    name = "test"
+object Bibik : Project({
+    name = "Bibik"
 
-    steps {
-        script {
-            name = "step1"
-            scriptContent = "echo шаг первый"
-        }
-        script {
-            name = "step2"
-            scriptContent = "echo шаг второй"
-        }
-    }
+    vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 })
 
-
-object Test_Test2 : BuildType({
-    name = "test2"
-    description = "bild2"
-
-
-object Finish : Project({
-    name = "finish"
-
-    vcsRoot(Finish_HttpsGithubComABibikov1987bibik)
-})
-
-object Finish_HttpsGithubComABibikov1987bibik : GitVcsRoot({
-    name = "https://github.com/ABibikov1987/bibik"
+object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/ABibikov1987/bibik#refs/heads/main"
     url = "https://github.com/ABibikov1987/bibik"
     branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
     authMethod = password {
         userName = "ABibikov1987"
-        password = "credentialsJSON:70a0a77a-a09c-4fdc-a35d-e20996cb7174"
+        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
 })
 
-
-object Test : Project({
-    name = "Test"
-    description = "тестовый проект"
-
-    buildType(Test_Test)
-    buildType(Test_Test2)
-})
 
 object Test_Test : BuildType({
     name = "test"
 
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-
     steps {
         script {
             name = "step1"
-
-            scriptContent = "echo step3"
-        }
-        script {
-
             scriptContent = "echo step1"
         }
         script {
@@ -96,6 +83,7 @@ object Test_Test : BuildType({
     }
 })
 
+
 object Test_Test2 : BuildType({
     name = "test2"
     description = "bild2"
@@ -103,12 +91,11 @@ object Test_Test2 : BuildType({
     steps {
         script {
             name = "step1"
-            scriptContent = "echo шаг отработал"
+            scriptContent = "echo step3"
         }
         script {
-
             name = "step4"
-            scriptContent = "echo шаг блок 2 отработал по триггеру и образу"
+            scriptContent = "echo step4"
         }
     }
 
