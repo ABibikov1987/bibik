@@ -116,4 +116,11 @@ object Test_Test2 : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
+
+    steps {
+        script {
+            name = "step1"
+            scriptContent = "step3"
+        }
+    }
 })
