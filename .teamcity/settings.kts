@@ -1,7 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
-import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -118,13 +117,6 @@ object Test_Test2 : BuildType({
         script {
             name = "step4"
             scriptContent = "echo step4"
-        }
-    }
-
-    triggers {
-        finishBuildTrigger {
-            buildType = "${Test_Test.id}"
-            successfulOnly = true
         }
     }
 
