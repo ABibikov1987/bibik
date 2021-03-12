@@ -80,6 +80,7 @@ object Test : Project({
     description = "тестовый проект"
 
     buildType(Test_Test)
+    buildType(Test_Test2)
 })
 
 object Test_Test : BuildType({
@@ -106,4 +107,9 @@ object Test_Test : BuildType({
             successfulOnly = true
         }
     }
+})
+
+object Test_Test2 : BuildType({
+    name = "test2"
+    description = "bild2"
 })
