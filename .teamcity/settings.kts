@@ -120,7 +120,7 @@ object Test_Test2 : BuildType({
     steps {
         script {
             name = "step1"
-            scriptContent = "step3"
+            scriptContent = "echo step3"
         }
         script {
             name = "step4"
