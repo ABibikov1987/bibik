@@ -47,13 +47,7 @@ project {
 
     subProject(Test)
     subProject(Finish)
-    subProject(Bibik)
 }
-
-
-object Bibik : Project({
-    name = "Bibik"
-})
 
 
 object Finish : Project({
