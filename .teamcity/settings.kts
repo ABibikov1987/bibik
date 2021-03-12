@@ -127,4 +127,11 @@ object Test_Test2 : BuildType({
             scriptContent = "echo step4"
         }
     }
+
+    triggers {
+        finishBuildTrigger {
+            buildType = "${Test_Test.id}"
+            successfulOnly = true
+        }
+    }
 })
