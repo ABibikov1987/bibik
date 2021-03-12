@@ -134,4 +134,11 @@ object Test_Test2 : BuildType({
             successfulOnly = true
         }
     }
+
+    dependencies {
+        snapshot(Test_Test) {
+            onDependencyFailure = FailureAction.IGNORE
+            onDependencyCancel = FailureAction.IGNORE
+        }
+    }
 })
