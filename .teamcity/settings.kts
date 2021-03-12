@@ -31,11 +31,11 @@ object Test_Test : BuildType({
     steps {
         script {
             name = "step1"
-            scriptContent = "echo step1"
+            scriptContent = "echo шаг первый"
         }
         script {
             name = "step2"
-            scriptContent = "echo step2"
+            scriptContent = "echo шаг второй"
         }
     }
 })
@@ -103,12 +103,12 @@ object Test_Test2 : BuildType({
     steps {
         script {
             name = "step1"
-            scriptContent = "echo step3"
+            scriptContent = "echo шаг отработал"
         }
         script {
 
             name = "step4"
-            scriptContent = "echo step4"
+            scriptContent = "echo шаг блок 2 отработал по триггеру и образу"
         }
     }
 
