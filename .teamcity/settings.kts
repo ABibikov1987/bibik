@@ -58,7 +58,7 @@ object Bibik : Project({
 })
 
 object Bibik_Build : BuildType({
-    name = "Build"
+    name = "Build 1"
 
     vcs {
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
