@@ -93,5 +93,9 @@ object Test_Test : BuildType({
             name = "step1"
             scriptContent = "echo step1"
         }
+        script {
+            name = "step2"
+            scriptContent = "echo step2"
+        }
     }
 })
