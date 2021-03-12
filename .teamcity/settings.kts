@@ -43,10 +43,8 @@ project {
         }
     }
 
+    subProject(Test)
     subProject(Bibik)
-    subProject(Bibik_Build)
-    subProject(Testtest)
-    subProject(Publish)
 }
 
 
@@ -76,44 +74,6 @@ object Bibik_Build : BuildType({
 })
 
 
-object Testtest : BuildType({
-    name = "testtest"
-
-    artifactRules = "%teamcity.build.step.name%"
-
-    steps {
-        script {
-        name = "1 шаг первый "
-        scriptContent = """
-            echo is done
-            """.trimident()
-        formatStderrAsError
-
-        }
-    }
+object Test : Project({
+    name = "Test"
 })
-
-object Publish : BuildType({
-    name="build2"
-
-    steps {
-        script {
-
-        name = "2 проверка результатов первого шага"
-        scriptContent = """
-            echo is done
-            """.trimident()
-        formatStderrAsError
-    
-       }
-   }
-
-   dependencies {
-   artifacts(RelativeId("Testtest")) {
-        buildRule = tag ("testtest")
-        artifactRules = "%teamcity.build.step.name%"
-       }
-   }
-})
-
-
