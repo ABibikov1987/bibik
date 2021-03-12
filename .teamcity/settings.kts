@@ -86,10 +86,6 @@ object Test : Project({
 object Test_Test : BuildType({
     name = "test"
 
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
     steps {
         script {
             name = "step1"
