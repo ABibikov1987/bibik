@@ -44,6 +44,9 @@ project {
     }
 
     subProject(Bibik)
+    subProject(Bibik_Build)
+    subProject(Testtest)
+    subProject(Publish)
 }
 
 
@@ -71,7 +74,6 @@ object Bibik_Build : BuildType({
         }
     }
 })
-<<<<<<< HEAD
 
 
 object Testtest : BuildType({
