@@ -58,10 +58,6 @@ object Bibik : Project({
 object Bibik_Build : BuildType({
     name = "Build"
 
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
     steps {
         script {
             name = "test step"
