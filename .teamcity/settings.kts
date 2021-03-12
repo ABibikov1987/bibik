@@ -83,4 +83,8 @@ object Test : Project({
 
 object Test_Test : BuildType({
     name = "test"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
