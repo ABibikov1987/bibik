@@ -45,6 +45,7 @@ project {
     }
 
     subProject(Test)
+    subProject(Finish)
     subProject(Bibik)
 }
 
@@ -68,6 +69,11 @@ object Bibik_Build : BuildType({
             scriptContent = "echo step2"
         }
     }
+})
+
+
+object Finish : Project({
+    name = "finish"
 })
 
 
