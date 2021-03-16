@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
@@ -62,6 +63,13 @@ object Bibik_Build : BuildType({
 
     vcs {
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
+    }
+
+    steps {
+        script {
+            name = "step1"
+            scriptContent = "echo helloo"
+        }
     }
 
     triggers {
