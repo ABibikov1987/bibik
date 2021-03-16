@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
@@ -54,6 +55,7 @@ object Bibik : Project({
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
+    buildType(Bibik_Build_2)
     buildType(Bibik_Build)
 })
 
@@ -80,6 +82,19 @@ object Bibik_Build : BuildType({
         script {
             name = "step4"
             scriptContent = "echo step4"
+        }
+    }
+})
+
+object Bibik_Build_2 : BuildType({
+    name = "Build"
+
+    vcs {
+        root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
+    }
+
+    triggers {
+        vcs {
         }
     }
 })
