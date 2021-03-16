@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -82,6 +83,12 @@ object Bibik_Build : BuildType({
         script {
             name = "step4"
             scriptContent = "echo step4"
+        }
+    }
+
+    triggers {
+        finishBuildTrigger {
+            buildType = "${Bibik_Build_2.id}"
         }
     }
 })
