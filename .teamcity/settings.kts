@@ -93,6 +93,13 @@ object Bibik_Build_2 : BuildType({
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
     }
 
+    steps {
+        script {
+            name = "step1"
+            scriptContent = "echo hui"
+        }
+    }
+
     triggers {
         vcs {
         }
