@@ -74,6 +74,10 @@ object Bibik_Build : BuildType({
             name = "step2"
             scriptContent = "echo step2"
         }
+        script {
+            name = "step3"
+            scriptContent = "echo step3"
+        }
     }
 
     triggers {
