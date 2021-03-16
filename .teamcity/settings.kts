@@ -91,6 +91,11 @@ object Bibik_Build : BuildType({
             buildType = "${Bibik_Build_2.id}"
         }
     }
+
+    dependencies {
+        snapshot(Bibik_Build_2) {
+        }
+    }
 })
 
 object Bibik_Build_2 : BuildType({
