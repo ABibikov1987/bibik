@@ -110,6 +110,10 @@ object Bibik_Build_2 : BuildType({
             scriptContent = "echo hui"
         }
     }
+
+    requirements {
+        exists("123")
+    }
 })
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
