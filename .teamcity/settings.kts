@@ -67,7 +67,6 @@ object Bibik : Project({
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 
-    buildType(Bibik_Build_2)
     buildType(Bibik_Build)
 })
 
@@ -99,27 +98,12 @@ object Bibik_Build : BuildType({
 
     triggers {
         finishBuildTrigger {
-            buildType = "${Bibik_Build_2.id}"
+            buildType = "Bibik_Build_2"
         }
     }
 
     dependencies {
-        snapshot(Bibik_Build_2) {
-        }
-    }
-})
-
-object Bibik_Build_2 : BuildType({
-    name = "Build"
-
-    vcs {
-        root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
-    }
-
-    steps {
-        script {
-            name = "step1"
-            scriptContent = "echo hui"
+        snapshot(RelativeId("Bibik_Build_2")) {
         }
     }
 })
