@@ -73,6 +73,11 @@ object Bibik : Project({
 object Bibik_Build : BuildType({
     name = "Build 1"
 
+    params {
+        select("параметры", "1", label = "параметры",
+                options = listOf("1", "2", "3"))
+    }
+
     vcs {
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
     }
