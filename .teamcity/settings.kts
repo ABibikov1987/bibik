@@ -31,6 +31,8 @@ version = "2020.2"
 project {
     description = "Contains all other projects"
 
+    vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
+
     features {
         buildReportTab {
             id = "PROJECT_EXT_1"
@@ -48,12 +50,22 @@ project {
     subProject(Bibik)
 }
 
+object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
+    name = "https://github.com/ABibikov1987/bibik#refs/heads/main (1)"
+    url = "https://github.com/ABibikov1987/bibik"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "ABibikov1987"
+        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
+    }
+})
+
 
 object Bibik : Project({
     name = "Bibik"
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
-    vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
     buildType(Bibik_Build_2)
     buildType(Bibik_Build)
@@ -114,17 +126,6 @@ object Bibik_Build_2 : BuildType({
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
     name = "https://github.com/ABibikov1987/bibik#refs/heads/main"
-    url = "https://github.com/ABibikov1987/bibik"
-    branch = "refs/heads/main"
-    branchSpec = "refs/heads/*"
-    authMethod = password {
-        userName = "ABibikov1987"
-        password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
-    }
-})
-
-object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
-    name = "https://github.com/ABibikov1987/bibik#refs/heads/main (1)"
     url = "https://github.com/ABibikov1987/bibik"
     branch = "refs/heads/main"
     branchSpec = "refs/heads/*"
