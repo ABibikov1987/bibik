@@ -118,6 +118,11 @@ object Bibik_Test : BuildType({
     vcs {
         showDependenciesChanges = true
     }
+
+    dependencies {
+        snapshot(Bibik_Build) {
+        }
+    }
 })
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
