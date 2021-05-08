@@ -96,7 +96,6 @@ object Python_PythonPipline : BuildType({
                     contur = %kontur%
                     namespace = %namespase%
                     path = stend_path[%stend%]
-                    #path = %path_to_cfg%
                     with open(path) as f:
                     	for line in f:
                     		line = line.split(':')
@@ -115,7 +114,6 @@ object Python_PythonPipline : BuildType({
                     				val = value[:-1]
                     			config[prm[0]] = val
                     print(config)
-                    #print (slovar[%stend%][%kontur%][%namespase%])
                 """.trimIndent()
             }
         }
