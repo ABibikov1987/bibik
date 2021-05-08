@@ -81,7 +81,7 @@ object Python_PythonPipline : BuildType({
     steps {
         python {
             command = script {
-                content = "print (a+b)"
+                content = "print (%a%+%b%)"
             }
         }
     }
