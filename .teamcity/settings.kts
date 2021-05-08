@@ -58,6 +58,8 @@ object PiplinePython : Template({
     params {
         select("a", "", label = "a", description = "a", display = ParameterDisplay.PROMPT,
                 options = listOf("3", "4", "5"))
+        select("b", "", label = "b", description = "b", display = ParameterDisplay.PROMPT,
+                options = listOf("7", "6", "5"))
     }
 
     vcs {
