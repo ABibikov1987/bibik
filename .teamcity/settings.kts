@@ -86,6 +86,7 @@ object Python_PythonPipline : BuildType({
             command = script {
                 content = "print (%a%+%b%)"
             }
+            param("teamcity.build.workingDir", """C:\Users\admin\AppData\Local\Programs\Python\Python36""")
         }
     }
 })
