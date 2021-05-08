@@ -95,7 +95,7 @@ object Python_PythonPipline : BuildType({
                     config = {}
                     contur = %kontur%
                     namespace = %namespase%
-                    path = stend_path[%stend%%]
+                    path = stend_path[%stend%]
                     #path = %path_to_cfg%
                     with open(path) as f:
                     	for line in f:
