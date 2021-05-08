@@ -116,6 +116,8 @@ object Bibik_Test : BuildType({
     type = BuildTypeSettings.Type.COMPOSITE
 
     vcs {
+        root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
+
         showDependenciesChanges = true
     }
 
