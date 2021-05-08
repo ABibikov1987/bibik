@@ -71,6 +71,11 @@ object Python : Project({
 object Python_PythonPipline : BuildType({
     name = "python_pipline"
 
+    params {
+        select("a", "", label = "a", display = ParameterDisplay.PROMPT,
+                options = listOf("3", "4", "5"))
+    }
+
     steps {
         python {
             command = script {
