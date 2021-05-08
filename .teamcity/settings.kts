@@ -76,8 +76,7 @@ object Bibik_Build : BuildType({
     name = "Build 1"
 
     params {
-        select("conturs", "1", label = "conturs",
-                options = listOf("1", "2", "3"))
+        text("conturs", "", label = "conturs", display = ParameterDisplay.HIDDEN, allowEmpty = true)
     }
 
     vcs {
@@ -117,10 +116,10 @@ object Bibik_Test : BuildType({
     type = BuildTypeSettings.Type.COMPOSITE
 
     params {
-        select("coose", "", label = "choose", description = "выбрать контур", display = ParameterDisplay.PROMPT,
-                options = listOf("1", "2", "3"))
         select("choose_ver_branch", "", label = "choose version", description = "выберете версию ветки гита", display = ParameterDisplay.PROMPT,
                 options = listOf("1.1.4", "1.1.5"))
+        select("coose", "", label = "choose", description = "выбрать контур", display = ParameterDisplay.PROMPT,
+                options = listOf("1", "2", "3"))
     }
 
     vcs {
