@@ -51,6 +51,10 @@ project {
 object PiplinePython : Template({
     name = "pipline_Python"
     description = "pipline_Python"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
