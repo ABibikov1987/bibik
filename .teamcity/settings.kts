@@ -94,17 +94,25 @@ object Python_PythonPipline : BuildType({
                     #          }
                     config = {}
                     contur = %kontur%
+                    namespace = %namespase%
                     path = %path_to_cfg%
                     with open(path) as f:
                     	for line in f:
-                    		if contur in line.split(':')[0]:
-                    			prm = line.split(':')[0]
-                    			val = line.split(':')[1]
+                    		line = line.split(':')
+                    		try:
+                    			key = line[0].split('_')
+                    			value = line[1]
+                    		except IndexError as error:
+                    			continue
+                    
+                    		if contur == key[1] and namespace == key[2]:
+                    			prm = key
+                    			val = value
                     			if '\n' not in val:
-                    				val = line.split(':')[1]
+                    				val = value
                     			else:
-                    				val = line.split(':')[1][:-1]
-                    			config[prm.split('_')[0]] = val
+                    				val = value[:-1]
+                    			config[prm[0]] = val
                     print(config)
                     #print (slovar[%stend%][%kontur%][%namespase%])
                 """.trimIndent()
