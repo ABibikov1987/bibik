@@ -69,4 +69,8 @@ object Python : Project({
 
 object Python_PythonPipline : BuildType({
     name = "python_pipline"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
