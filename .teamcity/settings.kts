@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
@@ -62,6 +63,12 @@ object PiplinePython : Template({
         script {
             id = "RUNNER_6"
             scriptContent = "echo copy file is done"
+        }
+        python {
+            id = "RUNNER_7"
+            command = script {
+                content = "print (a+b)"
+            }
         }
     }
 })
