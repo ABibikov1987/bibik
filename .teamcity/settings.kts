@@ -73,7 +73,7 @@ object Python_PythonPipline : BuildType({
 
     params {
         select("K4", "", label = "K4", display = ParameterDisplay.PROMPT,
-                options = listOf("rb", "kb", "oc"))
+                options = listOf(""""rb"""", """"kb"""", """"oc""""))
     }
 
     steps {
