@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -54,6 +55,13 @@ object PiplinePython : Template({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            id = "RUNNER_6"
+            scriptContent = "echo copy file is done"
+        }
     }
 })
 
