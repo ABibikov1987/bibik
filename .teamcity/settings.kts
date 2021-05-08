@@ -86,7 +86,20 @@ object Python_PythonPipline : BuildType({
                 executable = """C:\Users\admin\AppData\Local\Programs\Python\Python36\python.exe"""
             }
             command = script {
-                content = "print (%stend%,%kontur%,%namespase%)"
+                content = """
+                    slovar = {'K4': {'rb': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
+                                            'b': ['123', '456','789']
+                                           },
+                                     'kb': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
+                                            'b': ['dsfsdf', 'fsdfsd','dsfsdf']
+                                           },
+                                     'oc': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
+                                            'b': ['dsfsdf', 'fsdfsd','dsfsdf']
+                                           }
+                                     }
+                              }
+                    print (slovar[%stend%][%kontur%][%namespase%])
+                """.trimIndent()
             }
         }
     }
