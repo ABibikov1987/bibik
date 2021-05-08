@@ -76,7 +76,7 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""a"""", """"b""""))
         select("stend", "", label = "stends", display = ParameterDisplay.PROMPT,
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
-        select("kontur", "", label = "K4", display = ParameterDisplay.PROMPT,
+        select("kontur", "", label = "kontur", display = ParameterDisplay.PROMPT,
                 options = listOf(""""rb"""", """"kb"""", """"oc""""))
     }
 
