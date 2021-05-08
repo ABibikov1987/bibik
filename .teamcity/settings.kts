@@ -116,6 +116,11 @@ object Bibik_Test : BuildType({
 
     type = BuildTypeSettings.Type.COMPOSITE
 
+    params {
+        select("coose", "", label = "choose", description = "выбрать контур", display = ParameterDisplay.PROMPT,
+                options = listOf("1", "2", "3"))
+    }
+
     vcs {
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 
