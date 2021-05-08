@@ -88,18 +88,24 @@ object Python_PythonPipline : BuildType({
             }
             command = script {
                 content = """
-                    slovar = {'K4': {'rb': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
-                                            'b': ['123', '456','789']
-                                           },
-                                     'kb': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
-                                            'b': ['dsfsdf', 'fsdfsd','dsfsdf']
-                                           },
-                                     'oc': {'a': ['dsfsdf', 'fsdfsd','dsfsdf'],
-                                            'b': ['dsfsdf', 'fsdfsd','dsfsdf']
-                                           }
-                                     }
-                              }
-                    print (slovar[%stend%][%kontur%][%namespase%])
+                    #slovar = {'K4': {'rb': 'path_to_cfg',
+                    #
+                    #                 }
+                    #          }
+                    config = {}
+                    contur = %kontur%
+                    with open(%path_to_cfg%) as f:
+                    	for line in f:
+                    		if contur in line.split(':')[0]:
+                    			prm = line.split(':')[0]
+                    			val = line.split(':')[1]
+                    			if '\n' not in val:
+                    				val = line.split(':')[1]
+                    			else:
+                    				val = line.split(':')[1][:-1]
+                    			config[prm.split('_')[0]] = val
+                    print(config)
+                    #print (slovar[%stend%][%kontur%][%namespase%])
                 """.trimIndent()
             }
         }
