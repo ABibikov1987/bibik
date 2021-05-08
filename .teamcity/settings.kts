@@ -81,7 +81,7 @@ object Python_PythonPipline : BuildType({
     steps {
         python {
             pythonVersion = customPython {
-                executable = """C:\Users\admin\AppData\Local\Programs\Python\Python36"""
+                executable = """C:\Users\admin\AppData\Local\Programs\Python\Python36\python.exe"""
             }
             command = script {
                 content = "print (%a%+%b%)"
