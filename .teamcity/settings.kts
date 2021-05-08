@@ -144,6 +144,11 @@ object Bibik_Test : BuildType({
             }
         }
     }
+
+    dependencies {
+        snapshot(Bibik_Build) {
+        }
+    }
 })
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
