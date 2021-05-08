@@ -35,7 +35,6 @@ project {
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
     template(PiplinePython)
-    template(PiplinePython2)
 
     features {
         buildReportTab {
@@ -56,35 +55,6 @@ project {
 
 object PiplinePython : Template({
     name = "pipline_Python"
-    description = "pipline_Python"
-
-    params {
-        select("a", "", label = "a", description = "a", display = ParameterDisplay.PROMPT,
-                options = listOf("3", "4", "5"))
-        select("b", "", label = "b", description = "b", display = ParameterDisplay.PROMPT,
-                options = listOf("7", "6", "5"))
-    }
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        script {
-            id = "RUNNER_6"
-            scriptContent = "echo copy file is done"
-        }
-        python {
-            id = "RUNNER_7"
-            command = script {
-                content = "print (%a%+%b%)"
-            }
-        }
-    }
-})
-
-object PiplinePython2 : Template({
-    name = "pipline_Python2"
     description = "pipline_Python"
 
     params {
