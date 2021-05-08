@@ -68,7 +68,6 @@ object Bibik : Project({
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 
-    buildType(Bibik_Test2)
     buildType(Bibik_Test)
     buildType(Bibik_Build)
     buildTypesOrder = arrayListOf(Bibik_Test, Bibik_Build)
@@ -140,17 +139,6 @@ object Bibik_Test : BuildType({
     vcs {
         root(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 
-        showDependenciesChanges = true
-    }
-})
-
-object Bibik_Test2 : BuildType({
-    name = "test2"
-    description = "parallel"
-
-    type = BuildTypeSettings.Type.COMPOSITE
-
-    vcs {
         showDependenciesChanges = true
     }
 })
