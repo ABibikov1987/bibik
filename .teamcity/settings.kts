@@ -31,6 +31,8 @@ project {
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
+    template(PiplinePython)
+
     features {
         buildReportTab {
             id = "PROJECT_EXT_1"
@@ -45,6 +47,11 @@ project {
         }
     }
 }
+
+object PiplinePython : Template({
+    name = "pipline_Python"
+    description = "pipline_Python"
+})
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
     name = "https://github.com/ABibikov1987/bibik#refs/heads/main (1)"
