@@ -127,8 +127,6 @@ object Bibik_Test : BuildType({
     name = "test"
     description = "parallel"
 
-    type = BuildTypeSettings.Type.COMPOSITE
-
     params {
         select("choose_ver_branch", "", label = "choose version", description = "выберете версию ветки гита", display = ParameterDisplay.PROMPT,
                 options = listOf("1.1.4", "1.1.5"))
