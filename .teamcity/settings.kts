@@ -105,7 +105,7 @@ object Bibik_Build : BuildType({
 
     triggers {
         finishBuildTrigger {
-            buildType = "Bibik_Build_2"
+            buildType = "${Bibik_Test.id}"
         }
     }
 })
