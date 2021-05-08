@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
@@ -84,9 +85,15 @@ object Bibik_Build : BuildType({
     }
 
     steps {
-        script {
+        python {
             name = "step1"
-            scriptContent = "echo helloo"
+            command = script {
+                content = """
+                    a = 1+1
+                    print ("a")
+                    print ("%conturs%")
+                """.trimIndent()
+            }
         }
         script {
             name = "step2"
