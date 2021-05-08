@@ -67,8 +67,9 @@ object Bibik : Project({
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain)
 
-    buildType(Bibik_Build)
     buildType(Bibik_Test)
+    buildType(Bibik_Build)
+    buildTypesOrder = arrayListOf(Bibik_Test, Bibik_Build)
 })
 
 object Bibik_Build : BuildType({
