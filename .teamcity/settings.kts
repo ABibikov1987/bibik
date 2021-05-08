@@ -88,14 +88,15 @@ object Python_PythonPipline : BuildType({
             }
             command = script {
                 content = """
-                    #slovar = {'K4': {'rb': 'path_to_cfg',
-                    #
-                    #                 }
-                    #          }
+                    stend_path = {'K4': r'C:/test/K4.cfg',
+                                  'K3': r'C:/test/K3.cfg'
+                              }
+                    
                     config = {}
                     contur = %kontur%
                     namespace = %namespase%
-                    path = %path_to_cfg%
+                    path = stend_path[%stend%%]
+                    #path = %path_to_cfg%
                     with open(path) as f:
                     	for line in f:
                     		line = line.split(':')
