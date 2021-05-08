@@ -63,4 +63,10 @@ object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
 object Python : Project({
     name = "python"
     description = "Python"
+
+    buildType(Python_PythonPipline)
+})
+
+object Python_PythonPipline : BuildType({
+    name = "python_pipline"
 })
