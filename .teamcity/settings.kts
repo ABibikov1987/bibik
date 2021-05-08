@@ -72,8 +72,8 @@ object Python_PythonPipline : BuildType({
     name = "python_pipline"
 
     params {
-        select("a", "", label = "a", display = ParameterDisplay.PROMPT,
-                options = listOf("3", "4", "5"))
+        select("K4", "", label = "K4", display = ParameterDisplay.PROMPT,
+                options = listOf("rb", "kb", "oc"))
         select("b", "", label = "b", description = "b", display = ParameterDisplay.PROMPT,
                 options = listOf("6", "7", "8"))
     }
