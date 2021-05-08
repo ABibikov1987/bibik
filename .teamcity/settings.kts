@@ -76,7 +76,7 @@ object Bibik_Build : BuildType({
     name = "Build 1"
 
     params {
-        select("зфкфь", "1", label = "conturs",
+        select("conturs", "1", label = "conturs",
                 options = listOf("1", "2", "3"))
     }
 
