@@ -78,7 +78,6 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("kontur", "", label = "kontur", display = ParameterDisplay.PROMPT,
                 options = listOf(""""rb"""", """"kb"""", """"oc""""))
-        text("path_to_cfg", "r'C:/test/K4.cfg'", label = "path_to_cfg", display = ParameterDisplay.HIDDEN, allowEmpty = false)
     }
 
     vcs {
