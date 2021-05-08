@@ -72,10 +72,10 @@ object Python_PythonPipline : BuildType({
     name = "python_pipline"
 
     params {
-        select("stend", "", label = "stends", display = ParameterDisplay.PROMPT,
-                options = listOf("K3", "K4", "NT", "IFT", "PSI", "PROD"))
         select("namespase", "", label = "choose namespase", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
+        select("stend", "", label = "stends", display = ParameterDisplay.PROMPT,
+                options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("kontur", "", label = "K4", display = ParameterDisplay.PROMPT,
                 options = listOf(""""rb"""", """"kb"""", """"oc""""))
     }
