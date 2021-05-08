@@ -76,7 +76,7 @@ object Bibik_Build : BuildType({
     name = "Build 1"
 
     params {
-        text("conturs", "", label = "conturs", display = ParameterDisplay.HIDDEN, allowEmpty = true)
+        text("conturs", "12", label = "conturs", display = ParameterDisplay.HIDDEN, allowEmpty = true)
     }
 
     vcs {
