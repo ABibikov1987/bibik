@@ -30,7 +30,6 @@ version = "2020.2"
 
 project {
     description = "Contains all other projects"
-    defaultTemplate = RelativeId("PiplinePython")
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
