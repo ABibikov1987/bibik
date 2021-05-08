@@ -94,7 +94,7 @@ object Python_PythonPipline : BuildType({
                     #          }
                     config = {}
                     contur = %kontur%
-                    path = r'%path_to_cfg%'
+                    path = %path_to_cfg%
                     with open(path) as f:
                     	for line in f:
                     		if contur in line.split(':')[0]:
