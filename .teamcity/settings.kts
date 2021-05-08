@@ -81,6 +81,10 @@ object Python_PythonPipline : BuildType({
         text("path_to_cfg", "r'C:/test/K4.cfg'", label = "path_to_cfg", display = ParameterDisplay.HIDDEN, allowEmpty = false)
     }
 
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
     steps {
         python {
             pythonVersion = customPython {
