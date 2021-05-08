@@ -55,6 +55,11 @@ object PiplinePython : Template({
     name = "pipline_Python"
     description = "pipline_Python"
 
+    params {
+        select("a", "", label = "a", description = "a", display = ParameterDisplay.PROMPT,
+                options = listOf("3", "4", "5"))
+    }
+
     vcs {
         root(DslContext.settingsRoot)
     }
