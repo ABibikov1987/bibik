@@ -74,6 +74,8 @@ object Python_PythonPipline : BuildType({
     params {
         select("a", "", label = "a", display = ParameterDisplay.PROMPT,
                 options = listOf("3", "4", "5"))
+        select("b", "", label = "b", description = "b", display = ParameterDisplay.PROMPT,
+                options = listOf("6", "7", "8"))
     }
 
     steps {
