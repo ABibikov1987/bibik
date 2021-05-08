@@ -86,10 +86,7 @@ object Python_PythonPipline : BuildType({
                 executable = """C:\Users\admin\AppData\Local\Programs\Python\Python36\python.exe"""
             }
             command = script {
-                content = """
-                    a=input ("choose stend")
-                    print (a)
-                """.trimIndent()
+                content = "print (kontur, namespase, stend)"
             }
         }
     }
