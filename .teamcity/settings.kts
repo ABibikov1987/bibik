@@ -135,6 +135,15 @@ object Bibik_Test : BuildType({
 
         showDependenciesChanges = true
     }
+
+    steps {
+        python {
+            name = "step4"
+            command = script {
+                content = """print ("прошло")"""
+            }
+        }
+    }
 })
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain : GitVcsRoot({
