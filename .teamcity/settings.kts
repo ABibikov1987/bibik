@@ -97,6 +97,7 @@ object Bibik_Build : BuildType({
         }
         script {
             name = "step2"
+            enabled = false
             scriptContent = "echo step2"
         }
         script {
