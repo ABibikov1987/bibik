@@ -119,10 +119,6 @@ object Bibik_Test : BuildType({
         showDependenciesChanges = true
     }
 
-    failureConditions {
-        executionTimeoutMin = 1
-    }
-
     dependencies {
         snapshot(Bibik_Build) {
         }
