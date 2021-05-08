@@ -76,6 +76,8 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""rb"""", """"kb"""", """"oc""""))
         select("choose_stend", "", label = "stends", display = ParameterDisplay.PROMPT,
                 options = listOf("K3", "K4", "NT", "IFT", "PSI", "PROD"))
+        select("choose namespase", "", label = "choose namespase", display = ParameterDisplay.PROMPT,
+                options = listOf("a", "b"))
     }
 
     steps {
