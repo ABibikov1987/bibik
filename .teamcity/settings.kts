@@ -74,7 +74,7 @@ object PiplinePython : Template({
         python {
             id = "RUNNER_7"
             command = script {
-                content = "print (a+b)"
+                content = "print (%a%+%b%)"
             }
         }
     }
