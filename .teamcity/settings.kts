@@ -1,6 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.python
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -33,8 +31,6 @@ project {
 
     vcsRoot(Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1)
 
-    template(PiplinePython)
-
     features {
         buildReportTab {
             id = "PROJECT_EXT_1"
@@ -51,35 +47,6 @@ project {
 
     subProject(Python)
 }
-
-object PiplinePython : Template({
-    name = "pipline_Python"
-    description = "pipline_Python"
-
-    params {
-        select("a", "", label = "a", description = "a", display = ParameterDisplay.PROMPT,
-                options = listOf("3", "4", "5"))
-        select("b", "", label = "b", description = "b", display = ParameterDisplay.PROMPT,
-                options = listOf("7", "6", "5"))
-    }
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        script {
-            id = "RUNNER_6"
-            scriptContent = "echo copy file is done"
-        }
-        python {
-            id = "RUNNER_7"
-            command = script {
-                content = "print (%a%+%b%)"
-            }
-        }
-    }
-})
 
 object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
     name = "https://github.com/ABibikov1987/bibik#refs/heads/main (1)"
