@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -69,4 +70,12 @@ object Python : Project({
 
 object Python_PythonPipline : BuildType({
     name = "python_pipline"
+
+    steps {
+        python {
+            command = script {
+                content = "print (a+b)"
+            }
+        }
+    }
 })
