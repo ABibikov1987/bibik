@@ -49,8 +49,6 @@ project {
             preventDependencyCleanup = false
         }
     }
-
-    subProject(Python)
 }
 
 object PiplinePython : Template({
@@ -91,9 +89,4 @@ object Bibik_HttpsGithubComABibikov1987bibikRefsHeadsMain1 : GitVcsRoot({
         userName = "ABibikov1987"
         password = "credentialsJSON:5297c011-7710-4aac-81f0-88e88e00a9bc"
     }
-})
-
-
-object Python : Project({
-    name = "python"
 })
