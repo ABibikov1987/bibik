@@ -115,7 +115,7 @@ object Bibik_Build : BuildType({
     triggers {
         finishBuildTrigger {
             buildType = "${Bibik_Test.id}"
-            successfulOnly = true
+            branchFilter = "%conturs%+:<default>"
         }
     }
 })
