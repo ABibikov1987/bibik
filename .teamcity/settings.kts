@@ -72,12 +72,12 @@ object Python_PythonPipline : BuildType({
     name = "python_pipline"
 
     params {
-        select("namespase", """"oc"""", label = "kontur", display = ParameterDisplay.PROMPT,
-                options = listOf(""""rb"""", """"kb"""", """"oc""""))
         select("stend", "", label = "stend", display = ParameterDisplay.PROMPT,
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("template", "", label = "template", display = ParameterDisplay.PROMPT,
                 options = listOf(""""tstr-storage"""", """"tstr-promrtheus"""", """"tstr-keycloack"""", """"tstr-client""""))
+        select("namespase", """"oc"""", label = "namespase", display = ParameterDisplay.PROMPT,
+                options = listOf(""""rb"""", """"kb"""", """"oc""""))
         select("shoulder", """"a"""", label = "shoulder", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
         select("release", """"RC-1.1.4"""", label = "release", display = ParameterDisplay.PROMPT,
