@@ -98,7 +98,7 @@ object Python_PythonPipline : BuildType({
                               }
                     
                     config = {}
-                    plecho = %plecho%
+                    shoulder = %shoulder%
                     namespace = %namespase%
                     path = stend_path[%stend%]
                     with open(path) as f:
@@ -110,7 +110,7 @@ object Python_PythonPipline : BuildType({
                     		except IndexError as error:
                     			continue
                     
-                    		if plecho == key[1] and namespace == key[2]:
+                    		if shoulder == key[1] and namespace == key[2]:
                     			prm = key
                     			val = value
                     			if '\n' not in val:
