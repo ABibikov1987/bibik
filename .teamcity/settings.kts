@@ -78,7 +78,7 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("shoulder", """"a"""", label = "shoulder", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
-        select("GIT_release", """"RC-1.1.4"""", label = "branch _release", display = ParameterDisplay.PROMPT,
+        select("release", """"RC-1.1.4"""", label = "release", display = ParameterDisplay.PROMPT,
                 options = listOf(""""RC-1.1.4"""", """"master""""))
         select("Template", "", label = "Template", display = ParameterDisplay.PROMPT,
                 options = listOf(""""tstr-storage"""", """"tstr-promrtheus"""", """"tstr-keycloack"""", """"tstr-client""""))
