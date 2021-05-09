@@ -78,8 +78,6 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("plecho", "", label = "plecho", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
-        select("kontur", "", label = "plecho", display = ParameterDisplay.PROMPT,
-                options = listOf(""""a"""", """"b""""))
     }
 
     vcs {
