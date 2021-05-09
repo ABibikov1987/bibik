@@ -93,8 +93,12 @@ object Python_PythonPipline : BuildType({
             }
             command = script {
                 content = """
-                    stend_path = {'K4': r'C:/test/K4.cfg',
-                                  'K3': r'C:/test/K3.cfg'
+                    stend_path = {'K4': r'C:/tstr-inventory/.teamcity/K4.cfg',
+                                  'K3': r'C:/tstr-inventory/.teamcity/K3.cfg',
+                                  'NT': r'C:/tstr-inventory/.teamcity/NT.cfg',
+                                  'IFT': r'C:/tstr-inventory/.teamcity/IFT.cfg',
+                                  'PSI': r'C:/tstr-inventory/.teamcity/PSI.cfg',
+                                  'PROD': r'C:/tstr-inventory/.teamcity/PROD.cfg',
                               }
                     
                     config = {}
