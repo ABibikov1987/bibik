@@ -76,7 +76,7 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""rb"""", """"kb"""", """"oc""""))
         select("stend", "", label = "stend", display = ParameterDisplay.PROMPT,
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
-        select("plecho", """"a"""", label = "plecho", display = ParameterDisplay.PROMPT,
+        select("shoulder", """"a"""", label = "shoulder", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
         select("GIT_release", """"RC-1.1.4"""", label = "branch _release", display = ParameterDisplay.PROMPT,
                 options = listOf(""""RC-1.1.4"""", """"master""""))
