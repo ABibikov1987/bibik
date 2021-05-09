@@ -78,7 +78,7 @@ object Python_PythonPipline : BuildType({
                 options = listOf(""""K3"""", """"K4"""", """"NT"""", """"IFT"""", """"PSI"""", """"PROD""""))
         select("plecho", """"a"""", label = "plecho", display = ParameterDisplay.PROMPT,
                 options = listOf(""""a"""", """"b""""))
-        select("branch _release", """"RC-1.1.4"""", label = "branch _release", display = ParameterDisplay.PROMPT,
+        select("GIT_release", """"RC-1.1.4"""", label = "branch _release", display = ParameterDisplay.PROMPT,
                 options = listOf(""""RC-1.1.4"""", """"master""""))
     }
 
