@@ -108,7 +108,7 @@ object Python_PythonPipline : BuildType({
                     		except IndexError as error:
                     			continue
                     
-                    		if contur == key[1] and namespace == key[2]:
+                    		if plecho == key[1] and namespace == key[2]:
                     			prm = key
                     			val = value
                     			if '\n' not in val:
