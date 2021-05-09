@@ -96,7 +96,7 @@ object Python_PythonPipline : BuildType({
                               }
                     
                     config = {}
-                    contur = %kontur%
+                    plecho = %plecho%
                     namespace = %namespase%
                     path = stend_path[%stend%]
                     with open(path) as f:
